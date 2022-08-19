@@ -21,22 +21,23 @@ namespace WPFCRUDOperations
     /// </summary>
     public partial class MainWindow : Window
     {
+        DDBBConnection connectionObj = new DDBBConnection();
+        MySqlConnection conn;
         public MainWindow()
         {
             InitializeComponent();
-            try
-            {
-                using (MySqlConnection connection = new(Constants.strConnection))
-                {
+        }
 
-                    connection.Open();
-                    MessageBox.Show(connection.State.ToString());
-
-                }
-            }
-            catch (MySqlException ex)
+        /*  When users clicks LOG IN btn fires this method.
+         *  Checks if txtBox and Pass are filled
+         *  If so, tries to set a connection to the SQL DDBB
+         * 
+         */
+        private void BtnLogin_Click(object sender, RoutedEventArgs e)
+        {
+            if (txtBoxUser.Text != "" && passBox.Password! != "")
             {
-                MessageBox.Show(ex.ToString());
+                conn = connectionObj.Connect(txtBoxUser.Text, passBox.Password);
             }
         }
     }

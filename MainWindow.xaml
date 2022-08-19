@@ -5,8 +5,16 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPFCRUDOperations"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
+        Title="MainWindow" Height="500" Width="800">
+    <StackPanel x:Name="stkWelcomeLayout" Margin="0,35,0,0">
+        <TextBlock x:Name="txtBlkWelcome" HorizontalAlignment="Center" Margin="0,0,0,0" TextWrapping="Wrap" Text="WELCOME TO" VerticalAlignment="Top" IsEnabled="False" TextAlignment="Center" FontSize="16"/>
+        <TextBlock x:Name="txtBlkCRUDOper" HorizontalAlignment="Center" Margin="0,25,0,0" TextWrapping="Wrap" Text="CRUD OPERATIONS" VerticalAlignment="Top" TextAlignment="Center" FontSize="24" FontWeight="Bold"/>
+        <TextBlock x:Name="txtBlkLogin" TextWrapping="Wrap" Text="PLEASE, LOG IN TO CONTINUE" TextAlignment="Center" Margin="0,25,0,0" FontSize="16"/>
+        <TextBlock x:Name="txtBlkUser" TextWrapping="Wrap" Text="USER" TextAlignment="Center" Margin="0,45,0,0" FontSize="16"/>
+        <TextBox x:Name="txtBoxUser" TextWrapping="Wrap" Width="150" Margin="0,10,0,0" Height="25" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="16"/>
+        <TextBlock x:Name="txtBlkPass" TextWrapping="Wrap" Text="PASSWORD" TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,35,0,0" FontSize="16"/>
+        <PasswordBox x:Name="passBox" Width="150" Margin="0,10,0,0" Height="25" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="16"/>
+        <Button x:Name="btnLogin" Content="LOG IN" Width="150" Height="25" Margin="0,50,0,0" Click="BtnLogin_Click" FontWeight="Bold"/>
 
-    </Grid>
+    </StackPanel>
 </Window>
