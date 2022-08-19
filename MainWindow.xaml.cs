@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySqlConnector;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,20 @@ namespace WPFCRUDOperations
         public MainWindow()
         {
             InitializeComponent();
+            try
+            {
+                using (MySqlConnection connection = new(Constants.strConnection))
+                {
+
+                    connection.Open();
+                    MessageBox.Show(connection.State.ToString());
+
+                }
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
         }
     }
 }
